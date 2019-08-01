@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">KMC-SMS</string>
+    <string name="permission_not_granted">SEND_SMS Permission Granted!</string>
+    <string name="failure_permission">SEND_SMS Permission Failed</string>
+</resources>
