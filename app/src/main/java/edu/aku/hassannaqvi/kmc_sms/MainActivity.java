@@ -138,6 +138,7 @@ public class MainActivity extends AppCompatActivity implements MessageListener {
         smsManager.sendTextMessage
                 (destinationAddress, scAddress, smsMessage,
                         sentIntent, deliveryIntent);
+        Toast.makeText(this, "Message Semt", Toast.LENGTH_SHORT).show();
     }
 
 }
