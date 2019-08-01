@@ -20,6 +20,7 @@ public class MessageReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         // Get the SMS message.
+        Log.d(TAG, "onReceive: Started");
         Bundle bundle = intent.getExtras();
         SmsMessage[] msgs;
         String strMessage = "";
