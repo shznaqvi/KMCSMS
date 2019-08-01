@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements MessageListener {
         //MessageReceiver.bindListener(this);
         smsButton = findViewById(R.id.smsButton);
         checkForSmsPermission();
+
+        KMCSMS.mainActivityContext = this;
     }
 
     @Override
