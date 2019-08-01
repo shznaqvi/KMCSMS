@@ -1,14 +1,12 @@
 package edu.aku.hassannaqvi.kmc_sms;
 
 import android.Manifest;
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -118,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements MessageListener {
         }
     }
 
-    public void smsSendMessageInAPP(View view) {
+   /* public void smsSendMessageInAPP(View view) {
         EditText editText = findViewById(R.id.number_to_call);
         // Set the destination phone number to the string in editText.
         String destinationAddress = editText.getText().toString();
@@ -138,6 +136,6 @@ public class MainActivity extends AppCompatActivity implements MessageListener {
         smsManager.sendTextMessage
                 (destinationAddress, scAddress, smsMessage,
                         sentIntent, deliveryIntent);
-    }
+    }*/
 
 }
