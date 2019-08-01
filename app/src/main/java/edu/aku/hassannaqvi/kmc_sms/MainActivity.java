@@ -1,12 +1,14 @@
 package edu.aku.hassannaqvi.kmc_sms;
 
 import android.Manifest;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -114,6 +116,28 @@ public class MainActivity extends AppCompatActivity implements MessageListener {
 
 
         }
+    }
+
+    public void smsSendMessageInAPP(View view) {
+        EditText editText = findViewById(R.id.number_to_call);
+        // Set the destination phone number to the string in editText.
+        String destinationAddress = editText.getText().toString();
+        // Find the sms_message view.
+        EditText smsEditText = findViewById(R.id.sms_message);
+        // Get the text of the SMS message.
+        String smsMessage = smsEditText.getText().toString();
+        // Set the service center address if needed, otherwise null.
+        String scAddress = null;
+        // Set pending intents to broadcast
+        // when message sent and when delivered, or set to null.
+        PendingIntent sentIntent = null, deliveryIntent = null;
+        // Check for permission first.
+        checkForSmsPermission();
+        // Use SmsManager.
+        SmsManager smsManager = SmsManager.getDefault();
+        smsManager.sendTextMessage
+                (destinationAddress, scAddress, smsMessage,
+                        sentIntent, deliveryIntent);
     }
 
 }
